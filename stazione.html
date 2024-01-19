@@ -42,7 +42,7 @@
             font-weight: bold;
         }
 
-        #back-button {
+        #back-button, #explore-button {
             font-size: 24px;
             color: #333;
             background-color: #fff;
@@ -50,14 +50,15 @@
             padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
+            display: inline-block; /* To align the button properly */
+            margin: 10px; /* Optional: for spacing */
         }
 
-        #back-button:hover {
+        #back-button:hover, #explore-button:hover {
             color: #fff;
             background-color: #333;
         }
 
-        
     </style>
 </head>
 <body>
@@ -65,12 +66,16 @@
     <h1><a href="florence.html" id="florence">Florence</a></h1>
     <h1><a href="pistoia.html" id="pistoia">Pistoia</a></h1>
     <h1><a href="sangimignano.html" id="sangimignano">San Gimignano</a></h1>
+    
+    <!-- New "???" Button linking to "what.html" -->
+    <a href="what.html" id="explore-button">???</a>
+
+    <!-- "Back" Button -->
     <a href="index.html" id="back-button">BACK</a>
 
     <audio autoplay loop>
         <source src="Train.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
 </body>
 </html>
