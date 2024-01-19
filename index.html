@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun and Whimsical Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <audio autoplay loop>
+        <source src="index.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var mymap = L.map('map').setView([43.322959164978855, 11.327278583158828], 15);
+
+        // Use a Mapbox style for a fun and whimsical look (replace 'your-access-token' with your Mapbox access token)
+        L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmVkYnVsbGllZCIsImEiOiJjbHJqNGs0aG0wZzYzMnJwOTFzaHpxZGk5In0.BU0j90jyCmK5nK280guORg', {
+            attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> contributors'
+        }).addTo(mymap);
+
+        // Markers for previously added locations
+        var hotelMarker = L.marker([43.322959164978855, 11.327278583158828]).addTo(mymap);
+        hotelMarker.bindPopup("<b>NH Siena Hotel</b><br>Address: Via La Lizza, 1, 53100 Siena SI, Italy").openPopup();
+
+        var duomoMarker = L.marker([43.3177052302597, 11.329116213566394]).addTo(mymap);
+        duomoMarker.bindPopup("<b>Duomo Di Siena</b><br>Address: Piazza del Duomo, 8, 53100 Siena SI, Italy").openPopup();
+        
+        var enotecaMarker = L.marker([43.31811439444392, 11.32961662733169]).addTo(mymap);
+        enotecaMarker.bindPopup("<b>Enoteca Sotto al Duomo</b><br>Address: Piazza S. Giovanni, 5, 53100 Siena SI, Italy").openPopup();
+
+        // Add a marker for Stazione FS (Siena Railway Station)
+        var stazioneMarker = L.marker([43.33180777006353, 11.322364269304934]).addTo(mymap);
+        stazioneMarker.bindPopup("<a href='stazione.html'><b>Stazione FS (Siena Railway Station)</b><br>Directions: 53100 Siena, Province of Siena</a>").openPopup();
+
+        var santaMariaMarker = L.marker([43.316971806990445, 11.328474186852693]).addTo(mymap);
+        santaMariaMarker.bindPopup("<b>Santa Maria della Scala</b><br>Address: Complesso Museale di Santa Maria della Scala, Piazza del Duomo, 1, 53100 Siena SI, Italy").openPopup();
+        
+        var accademiaFisiocriticiMarker = L.marker([43.31438759745623, 11.330947742674214]).addTo(mymap);
+        accademiaFisiocriticiMarker.bindPopup("<b>Musei dell’Accademia dei Fisiocritici (Accademia Fisiocritici Siena)</b><br>Address: Piazzetta Silvio Gigli, 2, 53100 Siena SI, Italy").openPopup();
+        
+        var pinacotecaNazionaleMarker = L.marker([43.31577037628012, 11.330641577636191]).addTo(mymap);
+        pinacotecaNazionaleMarker.bindPopup("<b>Pinacoteca Nazionale di Siena (Pinacoteca Nazionale)</b><br>Address: Via S. Pietro, 29, 53100 Siena SI, Italy").openPopup();
+
+        // Add a marker for Cimitero Comunale
+        var cimiteroComunaleMarker = L.marker([43.31434357340981, 11.320817687565665]).addTo(mymap);
+        cimiteroComunaleMarker.bindPopup("<b>Cimitero Comunale</b><br>Address: Laterina, 7, 53100 Siena SI, Italy").openPopup();
+    </script>
+</body>
+</html>

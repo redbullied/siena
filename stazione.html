@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clickable Text</title>
+    <style>
+        body {
+            background-image: url('siena.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 30px 0;
+            padding-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:nth-child(odd) {
+            color: #1e8449; /* Green */
+        }
+
+        a:nth-child(even) {
+            color: #fff; /* White */
+        }
+
+        a:hover {
+            color: #c0392b; /* Red on hover */
+        }
+
+        #florence, #pistoia, #sangimignano {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        #back-button {
+            font-size: 24px;
+            color: #333;
+            background-color: #fff;
+            border: 2px solid #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        #back-button:hover {
+            color: #fff;
+            background-color: #333;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>Travel To A Location</h1>
+    <h1><a href="florence.html" id="florence">Florence</a></h1>
+    <h1><a href="pistoia.html" id="pistoia">Pistoia</a></h1>
+    <h1><a href="sangimignano.html" id="sangimignano">San Gimignano</a></h1>
+    <a href="index.html" id="back-button">BACK</a>
+
+    <audio autoplay loop>
+        <source src="Train.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+</body>
+</html>

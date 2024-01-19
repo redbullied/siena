@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Video and Image with Back Button</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        #videoPlayer, #imageDisplay {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        #imageDisplay {
+            display: none;
+        }
+        #backButton {
+            display: none; /* Hidden initially */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <video id="videoPlayer">
+        <source src="glass.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <img id="imageDisplay" src="glass.png" />
+
+    <button id="backButton" onclick="window.location.href='index.html'">Back</button>
+
+    <script>
+        var videoPlayer = document.getElementById("videoPlayer");
+        var imageDisplay = document.getElementById("imageDisplay");
+        var backButton = document.getElementById("backButton");
+
+        document.body.addEventListener('click', function() {
+            videoPlayer.play();
+        }, false);
+
+        videoPlayer.addEventListener('ended', function() {
+            videoPlayer.style.display = 'none';
+            imageDisplay.style.display = 'block';
+            backButton.style.display = 'block'; // Show the back button
+        }, false);
+    </script>
+
+</body>
+</html>

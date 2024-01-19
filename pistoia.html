@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pistoia Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <audio autoplay loop>
+        <source src="index.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var mymap = L.map('map').setView([43.9333, 10.9167], 15); // Coordinates for Pistoia
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmVkYnVsbGllZCIsImEiOiJjbHJqNGs0aG0wZzYzMnJwOTFzaHpxZGk5In0.BU0j90jyCmK5nK280guORg', {
+            attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> contributors'
+        }).addTo(mymap);
+        
+        // All marker code has been removed
+    </script>
+</body>
+</html>
