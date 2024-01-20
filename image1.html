@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Side by Side Images</title>
+    <title>Image Viewer</title>
     <style>
-        .container {
+        .fullscreen-img {
+            position: fixed; /* Positioning to cover the whole screen */
+            top: 0;
+            left: 0;
             width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .image {
-            max-width: 50%;
-            height: auto;
-            padding: 10px; /* Optional: Adds space between the images */
+            height: 100%;
+            object-fit: cover; /* This makes the image cover the full screen */
+            display: none; /* Initially hidden */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="path_to_your_first_image.jpg" alt="Image 1" class="image">
-        <img src="path_to_your_second_image.jpg" alt="Image 2" class="image">
-    </div>
+    <img id="viewer" class="fullscreen-img">
+
+    <script>
+        const images = [
+            "path_to_your_first_image.jpg",
+            "break.jpg",
+            "path_to_your_second_image.jpg"
+        ];
+
+        let currentIndex = 0;
+
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById("viewer").src = images[currentIndex];
+        }
+
+        window.onload = function() {
+            const viewer = document.getElementById("viewer");
+            viewer.style.display = 'block'; // Show the viewer when the page loads
+            viewer.src = images[currentIndex]; // Start with the first image
+            viewer.onclick = showNextImage; // Change image on click
+        };
+    </script>
 </body>
 </html>
